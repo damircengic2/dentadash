@@ -2,18 +2,116 @@
 
     <li {!! (Request::is('admin') ? 'class="active"' : '') !!}>
         <a href="{{ route('admin.dashboard') }}">
-            <i class="livicon" data-name="dashboard" data-size="18" data-c="#418BCA" data-hc="#418BCA"
+            <i class="livicon" data-name="dashboard" data-size="18" data-c="#6cc66c" data-hc="#6cc66c"
                data-loop="true"></i>
-            <span class="title">Dashboard 1</span>
+            <span class="title">Dashboard</span>
+        </a>
+    </li>
+     <li {!! (Request::is('admin/calendar') ? 'class="active"' : '') !!}>
+        <a href="{{ URL::to('admin/calendar') }}">
+            <i class="livicon" data-name="calendar" data-size="18" data-c="#6cc66c" data-hc="#6cc66c"
+               data-loop="true"></i>
+            Appointments
+        </a>
+    </li>
+
+    <li {!! (Request::is('admin/users') || Request::is('admin/users/create') || Request::is('admin/user_profile') || Request::is('admin/users/*') || Request::is('admin/deleted_users') ? 'class="active"' : '') !!}>
+        <a href="#">
+            <i class="livicon" data-name="user" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
+               data-loop="true"></i>
+            <span class="title">Patients</span>
+            <span class="fa arrow"></span>
+        </a>
+        <ul class="sub-menu">
+            <li {!! (Request::is('admin/users') ? 'class="active" id="active"' : '') !!}>
+                <a href="{{ URL::to('admin/users') }}">
+                    <i class="livicon" data-name="user-flag" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
+                    Current Patients
+                </a>
+            </li>
+            <li {!! (Request::is('admin/users/create') ? 'class="active" id="active"' : '') !!}>
+                <a href="{{ URL::to('admin/users/create') }}">
+                    <i class="livicon" data-name="users-add" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
+                    Add New Patient
+                </a>
+            </li>
+        
+            <li {!! (Request::is('admin/deleted_users') ? 'class="active" id="active"' : '') !!}>
+                <a href="{{ URL::to('admin/deleted_users') }}">
+                    <i class="livicon" data-name="users-ban" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
+                    Archived patients
+                </a>
+            </li>
+        </ul>
+    </li>
+    
+     <li {!! (Request::is('admin/index1') ? 'class="active"' : '') !!}>
+        <a href="{{  URL::to('admin/index1') }}">
+            <i class="livicon" data-name="users" data-size="18" data-c="#6cc66c" data-hc="#6cc66c"
+               data-loop="true"></i>
+            Team
+        </a>
+    </li>
+     <li {!! (Request::is('admin/tasks') ? 'class="active"' : '') !!}>
+        <a href="{{ URL::to('admin/tasks') }}">
+            <i class="livicon" data-name="notebook" data-size="18" data-c="#6cc66c" data-hc="#6cc66c"
+               data-loop="true"></i>
+            Tasks
+        </a>
+    </li>
+  
+
+    <li {!! (Request::is('admin/users') || Request::is('admin/users/create') || Request::is('admin/user_profile') || Request::is('admin/users/*') || Request::is('admin/deleted_users') ? 'class="active"' : '') !!}>
+        <a href="#">
+            <i class="livicon" data-name="printer" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
+               data-loop="true"></i>
+            <span class="title">Invoices</span>
+            <span class="fa arrow"></span>
+        </a>
+        <ul class="sub-menu">
+            <li {!! (Request::is('admin/users') ? 'class="active" id="active"' : '') !!}>
+                <a href="{{ URL::to('admin/users') }}">
+                    <i class="livicon" data-name="plus-alt" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
+                    Create new
+                </a>
+            </li>
+            <li {!! (Request::is('admin/invoice_history') ? 'class="active" id="active"' : '') !!}>
+                <a href="{{ URL::to('admin/invoice_history') }}">
+                    <i class="livicon" data-name="folder-open" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
+                    History
+                </a>
+            </li>
+        
+            <li {!! (Request::is('admin/form_examples') ? 'class="active" id="active"' : '') !!}>
+                <a href="{{ URL::to('admin/form_examples') }}">
+                    <i class="livicon" data-name="shopping-cart" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
+                    Products & services
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li {!! (Request::is('admin/index1') ? 'class="active"' : '') !!}>
+        <a href="{{  URL::to('admin/index1') }}">
+            <i class="livicon" data-name="gears" data-size="18" data-c="#a9b6bc" data-hc="#a9b6bc"
+               data-loop="true"></i>
+            Settings
         </a>
     </li>
     <li {!! (Request::is('admin/index1') ? 'class="active"' : '') !!}>
         <a href="{{  URL::to('admin/index1') }}">
-            <i class="livicon" data-name="dashboard" data-size="18" data-c="#EF6F6C" data-hc="#EF6F6C"
+            <i class="livicon" data-name="question" data-size="18" data-c="#a9b6bc" data-hc="#a9b6bc"
                data-loop="true"></i>
-            Dashboard 2
+            Help
         </a>
     </li>
+     <li {!! (Request::is('admin/index1') ? 'class="active"' : '') !!}>
+        <a href="{{  URL::to('admin/index1') }}">
+            <i class="livicon" data-name="sign-out" data-size="18" data-c="#a9b6bc" data-hc="#a9b6bc"
+               data-loop="true"></i>
+            Log out
+        </a>
+    </li>
+  
 
     <li {!! (Request::is('admin/generator_builder') ? 'class="active"' : '') !!}>
         <a href="http://crud.joshadmin.com/admin/auto-login">

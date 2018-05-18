@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-Advanced Data Tables
+Invoice history
 @parent
 @stop
 
@@ -30,7 +30,7 @@ Advanced Data Tables
 <section class="content-header">
 
                 <!--section starts-->
-                <h1>Advanced Data Tables</h1>
+                <h1>Invoice history</h1>
                 <ol class="breadcrumb">
                     <li>
                         <a href="{{ route('admin.dashboard') }}">
@@ -39,9 +39,9 @@ Advanced Data Tables
                         </a>
                     </li>
                     <li>
-                        <a href="#">DataTables</a>
+                        <a href="#">Invoices</a>
                     </li>
-                    <li class="active">Advanced Data Tables</li>
+                    <li class="active">Invoice history</li>
                 </ol>
             </section>
             <!--section ends-->
@@ -52,8 +52,7 @@ Advanced Data Tables
                             <div class="card-heading clearfix  ">
                                 <div class="card-title pull-left">
                                        <div class="caption">
-                                    <i class="livicon" data-name="camera" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                                    TableTools
+                                    Invoice history
                                 </div>
                                 </div>
                             </div>
@@ -62,27 +61,17 @@ Advanced Data Tables
                                     <thead>
                                         <tr>
 
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>User Name</th>
-                                            <th>
-                                                User E-mail
-                                            </th>
+                                            <th>Invoice ID</th>
+                                            <th>Payee</th>
+                                            <th>Amount</th>
+                                            <th>Creation date</th>
+                                            <th>Status</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                        
-                                        <tr>
-
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>
-                                                Larrythe Bird
-                                            </td>
-                                            <td>
-                                                LarrytheBird@test.com
-                                            </td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -94,6 +83,31 @@ Advanced Data Tables
             </section>
             <!-- content -->
 
+            <?php  
+            $invoice = ConsoleTVs\Invoices\Classes\Invoice::make()
+ ->addItem('Test Item', 10.25, 2, 1412)
+ ->addItem('Test Item 2', 5, 2, 923)
+ ->addItem('Test Item 3', 15.55, 5, 42)
+ ->addItem('Test Item 4', 1.25, 1, 923)
+ ->addItem('Test Item 5', 3.12, 1, 3142)
+ ->addItem('Test Item 6', 6.41, 3, 452)
+ ->addItem('Test Item 7', 2.86, 1, 1526)
+ ->number(4021)
+ ->tax(21)
+ ->notes('Lrem ipsum dolor sit amet, consectetur adipiscing elit.')
+ ->customer([
+  'name' => 'Èrik Campobadal Forés',
+  'id' => '12345678A',
+  'phone' => '+34 123 456 789',
+  'location' => 'C / Unknown Street 1st',
+  'zip' => '08241',
+  'city' => 'Manresa',
+  'country' => 'Spain',
+ ])
+ ->download('demo'); 
+->show('demo');
+</script>
+?>
     @stop
 
 {{-- page level scripts --}}

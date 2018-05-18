@@ -69,9 +69,9 @@
                 </a>
             </li>
             <li>
-                <a href="#">Forms</a>
+                <a href="{{ route('admin.dashboard') }}">Invoices</a>
             </li>
-            <li class="active">Form Examples</li>
+            <li class="active">Products &amp; services</li>
         </ol>
     </section>
     <!--section ends-->
@@ -79,389 +79,133 @@
         <!--main content-->
         <div class="row">
             <!--row starts-->
-            <div class="col-md-12 col-lg-6 col-sm-6 col-12">
-                <!--lg-6 starts-->
-                <!--basic form starts-->
-                <div class="my-3">
-                <div class="card panel-primary" id="hidepanel1">
-                    <div class="card-heading">
-                        <h3 class="card-title">
-                            <i class="livicon" data-name="clock" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                            Basic Form 1
-                        </h3>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                    </div>
-                    <div class="card-body">
-                        <form class="form-horizontal" action="#">
-                            <!-- CSRF Token -->
-                                <!-- Name input-->
-                                <div class="form-group">
-                                    <div class="row">
-                                    <label class="col-md-3 col-lg-3 col-12 control-label" for="name">Name</label>
-                                    <div class="col-md-9 col-lg-9 col-12">
-                                        <input id="name" name="name" type="text" placeholder="Your name" class="form-control"></div>
-                                </div>
-                                </div>
-                                <!-- Email input-->
-                                <div class="form-group">
-                                    <div class="row">
-                                    <label class="col-md-3 col-lg-3 col-12 control-label" for="email">Your E-mail</label>
-                                    <div class="col-md-9 col-lg-9 col-12">
-                                        <input id="email" name="email" type="text" placeholder="Your email" class="form-control"></div>
-                                </div>
-                                </div>
-                                <!-- Message body -->
-                                <div class="form-group">
-                                    <div class="row">
-                                    <label class="col-md-3 col-lg-3 col-12 control-label" for="message">Your message</label>
-                                    <div class="col-md-9 col-lg-9 col-12">
-                                        <textarea class="form-control resize_vertical" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                    <label class="col-md-3 col-lg-3 col-12 control-label" for="upload">File Upload</label>
-                                    <div class="col-md-9 col-12 col-lg-9">
-                                        <div class="input-group image-preview">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                            <span class="input-group-btn">
-                    <!-- image-preview-clear button -->
-                    <button type="button" class="btn btn-default image-preview-clear" style="display:none; border-radius:0 !important; border: 1px solid rgba(0, 0, 0, 0.16);">
-                        <span class="fa  fa-remove"></span> Clear
-                    </button>
-                                                <!-- image-preview-input -->
-                    <div class="btn btn-default image_radius image-preview-input" style="margin-left:-3px;">
-                        <span class="fa fa-folder-open"></span>
-                        <span class="image-preview-input-title">Browse</span>
-                        <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-                    </div>
-                </span>
-                                        </div><!-- /input-group image-preview [TO HERE]-->
-                                    </div>
-                                    </div>
-                                </div>
-                                <!-- Form actions -->
-                                <div class="form-position">
-                                    <div class="row">
-                                    <div class="col-md-12  col-sm-12 col-12  col-lg-12 text-right">
-                                        <button type="submit" class="btn btn-responsive btn-primary btn-sm">Submit</button>
-                                    </div>
-                                    </div>
-                                </div>
-                        </form>
-                        </div>
-                    </div>
-                    </div>
-                <!--basic form 2 starts-->
-                <div class="my-3">
-                <div class="card panel-info" id="hidepanel2">
-                    <div class="card-heading">
-                        <h3 class="card-title">
-                            <i class="livicon" data-name="help" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                            Basic Form 2
-                        </h3>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                    </div>
-                    <div class="card-body">
-                        <form class="form-horizontal" action="#" method="">
-                            <!-- CSRF Token -->
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                            <fieldset>
-                                <!-- Name input-->
-                                <div class="form-group">
-                                    <div class="row">
-                                    <label class="col-md-3 col-lg-3 col-12 control-label" for="name1">E-mail Address</label>
-                                    <div class="col-md-9 col-lg-9 col-12">
-                                        <input id="name1" name="name" type="text" placeholder="Enter your Email" class="form-control"></div>
-                                </div>
-                                </div>
-                                <!-- Email input-->
-                                <div class="form-group">
-                                    <div class="row">
-                                    <label class="col-md-3 col-lg-3 col-12 control-label" for="password">Password</label>
-                                    <div class="col-md-9 col-12 col-lg-9">
-                                        <input id="password" name="password" type="password" placeholder="Enter your Password" class="form-control"></div>
-                                </div>
-                                </div>
-                                <div class="checkbox" style="margin-left:130px;">
-                                    <label>
-                                        <input type="checkbox" class="custom-checkbox">&nbsp; Stay signed in</label>
-                                </div>
-                                <!-- Form actions -->
-                                <div class="form-group">
-                                    <div class="row my-2">
-                                        <div class="col-md-3"></div>
-                                    <div class="col-md-9 col-lg-9 col-12">
-                                        <button type="submit" class="btn btn-responsive btn-info btn-sm">Sign in</button>
-                                    </div>
-                                </div>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <!--panel body ends--> </div>
-                    </div>
+   <div class="col-md-4 col-lg-3 col-4">
                 <!--input form starts-->
                 <div class="my-3">
                 <div class="card panel-warning" id="hidepanel5">
                     <div class="card-heading">
                         <h3 class="card-title">
-                            <i class="livicon" data-name="gift" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                            Form Inputs
+                            Add new Product or Service
                         </h3>
                                 <span class="float-right">
-                                    <i class="fa fa-chevron-up clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
+                                    <i class="fa fa-plus-circle"></i>
                                 </span>
                     </div>
                     <div class="card-body">
-                        <form role="form">
-                            <div class="form-group input-group">
-                                <div class="input-group-append">
-                                <span class="input-group-text">@</span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="User name"></div>
-                            <div class="form-group input-group">
-                                <input type="text" class="form-control">
-                                <div class="input-group-append">
-                                <span class="input-group-text image_radius">.00</span>
-                                </div>
-                            </div>
-                            <div class="form-group input-group">
-                                <div class="input-group-append">
-                                        <span class="input-group-text">
-                                            <i class="fa fa-eur"></i>
-                                        </span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Font Awesome Icon"></div>
-                            <div class="form-group input-group">
-                                <div class="input-group-append">
-                                <span class="input-group-text">$</span>
-                                </div>
-                                <input type="text" class="form-control">
-                                <div class="input-group-append">
-                                <span class="input-group-text Form image_radius">.00</span>
-                                </div>
-                            </div>
-                            <div class="form-group input-group">
-                                <input type="text" class="form-control">
-                                <div class="input-group-append">
-                                        <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-default input-group-text image_radius" type="button">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </span>
-                                </div>
-                            </div>
-                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                                <div>
-                                            <span class="btn btn-default btn-file">
-                                                <span class="fileinput-new">Select image</span>
-                                                <span class="fileinput-exists">Change</span>
-                                                <input type="file" name="..."></span>
-                                    <a href="#" class="btn btn-default fileinput-exists color_a" data-dismiss="fileinput">Remove</a>
-                                </div>
-                            </div>
-                        </form>
+                        <div class="row">
+    <div class="col-md-12" style="">
+        <div class="form-group ui-draggable-handle" style="position: static;">
+            <label for="input-text-2">Product or service name*</label>
+            <input class="form-control" id="input-text-2" placeholder="type here" type="text" required>
                     </div>
-                </div>
-                    </div>
-            </div>
-            <!--md-6 ends-->
-            <div class="col-md-12 col-lg-6 col-12 my-3">
-                <!--md-6 starts-->
-                <!--form control starts-->
-                <div class="card panel-success" id="hidepanel6">
-                    <div class="card-heading">
-                        <h3 class="card-title">
-                            <i class="livicon" data-name="share" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                            Form Controls
-                        </h3>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                    </div>
-                    <div class="card-body">
-                        <form role="form" id="form_controls">
-                            <div class="form-group">
-                                <label for="input">Text Input</label>
-                                <input class="form-control" id="input">
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-                            <div class="form-group">
-                                <label for="input2">Text Input with Placeholder</label>
-                                <input class="form-control" placeholder="Enter text" id="input2"></div>
-                            <div class="form-group">
-                                <label>Static Control</label>
-                                <p class="form-control-static">email@example.com</p>
-                            </div>
-                            <div class="form-group">
-                                <label for="area">Text area</label>
-                                <textarea class="form-control resize_vertical" id="area" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Checkboxes</label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" class="custom-checkbox" value="">&nbsp; Checkbox 1</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" class="custom-checkbox" value=""> &nbsp; Checkbox 2</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" class="custom-checkbox" value="">&nbsp;Checkbox 3</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Inline Checkboxes</label>
-                                <label class="checkbox-inline">
-                                    &nbsp;<input type="checkbox" class="custom-checkbox" >&nbsp;1</label>
-                                <label class=" checkbox-inline">
-                                    <input type="checkbox" class="custom-checkbox" >&nbsp;2</label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox"  class="custom-checkbox" >&nbsp;3</label>
-                            </div>
-                            <div class="form-group">
-                                <label>Radio Buttons</label>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" class="custom-radio" id="optionsRadios1" value="option1">&nbsp; Radio 1</label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" class="custom-radio" id="optionsRadios2" value="option2">&nbsp; Radio 2</label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" class="custom-radio" id="optionsRadios3" value="option3">&nbsp; Radio 3</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Inline Radio Buttons</label>
-                                <label class="radio-inline">
-                                    &nbsp;<input type="radio" class="custom-radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" >&nbsp; 1</label>
-                                <label class="radio-inline">
-                                    <input type="radio" class="custom-radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">&nbsp;2</label>
-                                <label class="radio-inline">
-                                    <input type="radio"  class="custom-radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">&nbsp; 3</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="select1">Select</label>
-                                <select class="form-control" id="select1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="multi">Multiple Selects</label>
-                                <select multiple class="form-control" id="multi">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                                    <div>
-                                            <span class="btn btn-default btn-file">
-                                                <span class="fileinput-new">Select image</span>
-                                                <span class="fileinput-exists">Change</span>
-                                                <input type="file" name="..."></span>
-                                        <a href="#" class="btn btn-default fileinput-exists color_a ml-2" data-dismiss="fileinput">Remove</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-responsive btn-default">Submit Button</button>
-                            <button type="reset" class="btn btn-responsive btn-default" id="reset">Reset Button</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <!--md-6 ends-->
-        <div class="row">
-            <div class="col-md-12 col-lg-6 col-12 my-3">
-                <!--md-6 starts-->
-                <!--validation states starts-->
-                <div class="card panel-danger" id="hidepanel4">
-                    <div class="card-heading">
-                        <h3 class="card-title">
-                            <i class="livicon" data-name="rocket" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                            Validation States
-                        </h3>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                    </div>
-                    <div class="card-body">
-                        <form role="form">
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess">Input with success</label>
-                                <input type="text" class="form-control" id="inputSuccess"></div>
-                            <div class="form-group has-warning">
-                                <label class="control-label" for="inputWarning">Input with warning</label>
-                                <input type="text" class="form-control" id="inputWarning"></div>
-                            <div class="form-group has-error">
-                                <label class="control-label" for="inputError">Input with error</label>
-                                <input type="text" class="form-control" id="inputError"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!--md-6 ends-->
-            <div class="col-md-12 col-lg-6 col-12 my-3">
-                <div class="card panel-default" id="hidepanel3">
-                    <div class="card-heading">
-                        <h3 class="card-title">
-                            <i class="livicon" data-name="leaf" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                            Disabled Fieldsets
-                        </h3>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                    </div>
-                    <div class="card-body">
-                        <form role="form">
-                            <fieldset disabled>
-                                <div class="form-group">
-                                    <label for="disabledSelect">Disabled input</label>
-                                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled></div>
-                                <div class="form-group">
-                                    <label for="disabledSelect">Disabled select menu</label>
-                                    <select id="disabledSelect" class="form-control">
-                                        <option>Disabled select</option>
-                                    </select>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" class="custom-checkbox" disabled>&nbsp; Disabled Checkbox</label>
-                                </div>
-                                <button type="submit" class="btn btn-responsive my-2">Disabled Button</button>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                     <div class="form-group ui-draggable-handle" style="">
+            <label for="select-1">Category</label>
+            <select class="form-control" id="select-1">
+                                                        <option value="Option 1">Prostethics</option>
+                                                        <option value="Option 2">Orthodontics</option>
+                                                        <option value="Option 3">General dentistry</option>
+                                                        <option value="Option 4">Materials</option>
+                                                    </select>
+            
         </div>
+         <div class="form-group ui-draggable-handle" style="position: static;">
+            <label for="input-text-3">Unit</label>
+            <input class="form-control" id="input-text-3" placeholder="type here" type="text" required>
+            
+        </div>
+        <div class="form-group ui-draggable-handle" style="position: static;">
+            <label for="input-text-3">Price per unit</label>
+            <input class="form-control" id="input-text-3" placeholder="type here" type="number" step="0.01" min="0" required>
+            
+        </div>
+       
+        <div class="form-group ui-draggable-handle" style="position: static;">
+            <label for="input-text-4">Cost per unit</label>
+            <input class="form-control" id="input-text-4" placeholder="type here" type="number" step="0.01" min="0">
+            
+        </div>
+        <div class="form-group pd-right ui-draggable-handle" style="position: static;">
+            <button type="submit" class="btn btn-default">Save</button>
+        </div>
+    </div>
+
+
+</div>
+                           
+                    </div>
+                </div>
+                    </div>
+            </div>
+
+            <!--md-6 ends-->
+            <div class="col-md-12 col-lg-8 col-12 my-3">
+                <!--md-6 starts-->
+               <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                <div class="card panel-danger table-edit">
+                    <div class="card-heading">
+                        <h3 class="card-title">
+                                    <span>
+                                    
+                                    Products &amp; services list </span>
+                        </h3>
+                       
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                        <div id="sample_editable_1_wrapper" class="">
+                            <div class="table-responsive-lg table-responsive-sm table-responsive-md">
+                            <table class="table table-striped table-bordered table-hover dataTable no-footer sample_editable"
+                                   id="sample_editable_1" role="grid" width="100%">
+                                <thead>
+                                <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1"
+                                        colspan="1">ID
+                                    </th>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1"
+                                        colspan="1">Item name
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1"
+                                        colspan="1" aria-label="
+                                                 Last Name
+                                            : activate to sort column ascending">Category
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1"
+                                        colspan="1" aria-label="
+                                                 Points
+                                            : activate to sort column ascending" style="width: 124px;">Price/unit
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1"
+                                        colspan="1" aria-label="
+                                                 Notes
+                                            : activate to sort column ascending" style="width: 152px;">Unit
+                                    </th>
+                                     <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1"
+                                        colspan="1" aria-label="
+                                                 Cost/unit
+                                            : activate to sort column ascending" style="width: 152px;">Cost/unit
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1"
+                                        colspan="1" aria-label="
+                                                 Edit
+                                            : activate to sort column ascending" style="width: 88px;">Edit
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1"
+                                        colspan="1" aria-label="
+                                                 Delete
+                                            : activate to sort column ascending" style="width: 125px;">Delete
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        <!-- END EXAMPLE TABLE PORTLET-->
+            </div>
+            <!--md-6 ends-->
+       
         <!--main content ends--> </section>
     <!-- content -->
 @stop

@@ -36,6 +36,10 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function () {
         return view('admin/login2');
     });
 
+     Route::get('invoice_history', function () {
+        return view('admin/invoice_history');
+    });
+
 
     # Register2
     Route::get('register2', function () {
