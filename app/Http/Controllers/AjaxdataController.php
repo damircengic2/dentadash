@@ -28,9 +28,9 @@ class AjaxdataController extends Controller
     }
     else
     {
-        DB::table('patients')->where('patient_name', "$patient_name")->update([
+        DB::table('patients')->where('Fname', "$patient_name")->update([
          'svg' => "$svg"
-        ])
+        ]);
         $success_output = 'Patient data saved';
     }
     
@@ -48,7 +48,7 @@ function patientChartGet(Request $request)
         'patient_name' => 'required'
     ]);
 
-    $patient = DB::table('patients')->select('svg')->->where('patient_name', '=', "$patient_name")->get()
+    $patient = DB::table('patients')->select('svg')->where('Fname', '=', "$patient_name")->get()
     return $patient[0]->svg
 }
 }

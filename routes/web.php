@@ -11,6 +11,9 @@ include_once 'demo.php';
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('patientchart/postdata', 'AjaxdataController@patientChartPost')->name('patientchart.postdata');
+Route::get('patientchart/getdata', 'AjaxdataController@patientChartGet')->name('patientchart.getdata');
+
 
 Route::pattern('slug', '[a-z0-9- _]+');
 
