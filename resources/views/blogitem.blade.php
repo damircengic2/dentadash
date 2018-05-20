@@ -1,4 +1,4 @@
-@extends('layouts/default')
+d@extends('layouts/default')
 
 {{-- Page title --}}
 @section('title')

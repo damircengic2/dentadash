@@ -31,7 +31,7 @@
 <body class="skin-josh">
 <header class="header">
     <a href="{{ route('admin.dashboard') }}" class="logo">
-        <img src="{{ asset('assets/img/logo.png') }}" alt="logo">
+        <img style="max-height: 100%;" src="{{ asset('assets/img/logo.svg') }}" alt="logo">
     </a>
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -42,8 +42,7 @@
         </div>
         <div class="navbar-right toggle">
             <ul class="nav navbar-nav  list-inline">
-                @include('admin.layouts._messages')
-                @include('admin.layouts._notifications')
+             
                 <li class=" nav-item dropdown user user-menu">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         @if(Sentinel::getUser()->pic)
@@ -132,35 +131,7 @@
     <aside class="left-side ">
         <section class="sidebar ">
             <div class="page-sidebar  sidebar-nav">
-                <div class="nav_icons">
-                    <ul class="sidebar_threeicons">
-                        <li>
-                            <a href="{{ URL::to('admin/advanced_tables') }}">
-                                <i class="livicon" data-name="table" title="Advanced tables" data-loop="true"
-                                   data-color="#418BCA" data-hc="#418BCA" data-s="25"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('admin/tasks') }}">
-                                <i class="livicon" data-name="list-ul" title="Tasks" data-loop="true"
-                                   data-color="#e9573f" data-hc="#e9573f" data-s="25"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('admin/gallery') }}">
-                                <i class="livicon" data-name="image" title="Gallery" data-loop="true"
-                                   data-color="#F89A14" data-hc="#F89A14" data-s="25"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ URL::to('admin/users') }}">
-                                <i class="livicon" data-name="user" title="Users" data-loop="true"
-                                   data-color="#6CC66C" data-hc="#6CC66C" data-s="25"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="clearfix"></div>
+           
                 <!-- BEGIN SIDEBAR MENU -->
                 @include('admin.layouts._left_menu')
                 <!-- END SIDEBAR MENU -->

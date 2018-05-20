@@ -102,6 +102,11 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin', 'middleware' => 'admin',
 
     Route::get('deleted_users',['before' => 'Sentinel', 'uses' => 'UsersController@getDeletedUsers'])->name('deleted_users');
 
+Route::group(['prefix' => 'admin','namespace'=>'Admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
+    # Patients Management
+     Route::get('deleted_patients',['before' => 'Sentinel', 'uses' => 'PatientController@getDeletedPatients'])->name('admin.patients.deleted_patients');
+ });
+
     # Group Management
     Route::group(['prefix' => 'groups'], function () {
         Route::get('{group}/delete', 'GroupsController@destroy')->name('groups.delete');
@@ -149,6 +154,10 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin', 'middleware' => 'admin',
         return redirect('admin/imagecropping');
     });
 
+ # Invoice
+    Route::get('invoice_default', function () {
+        return view('vendor/invoices/default');
+    });
 
     /* laravel example routes */
     #Charts

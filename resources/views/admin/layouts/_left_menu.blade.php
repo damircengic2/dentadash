@@ -1,5 +1,5 @@
 <ul id="menu" class="page-sidebar-menu">
-
+<li>&nbsp;</li>
     <li {!! (Request::is('admin') ? 'class="active"' : '') !!}>
         <a href="{{ route('admin.dashboard') }}">
             <i class="livicon" data-name="dashboard" data-size="18" data-c="#6cc66c" data-hc="#6cc66c"
@@ -15,7 +15,8 @@
         </a>
     </li>
 
-    <li {!! (Request::is('admin/users') || Request::is('admin/users/create') || Request::is('admin/user_profile') || Request::is('admin/users/*') || Request::is('admin/deleted_users') ? 'class="active"' : '') !!}>
+
+    <li {!! (Request::is('admin/patients*') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="user" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
                data-loop="true"></i>
@@ -24,26 +25,28 @@
         </a>
         <ul class="sub-menu">
             <li {!! (Request::is('admin/users') ? 'class="active" id="active"' : '') !!}>
-                <a href="{{ URL::to('admin/users') }}">
+                <a href="{{ URL::to('admin/patients/index') }}">
                     <i class="livicon" data-name="user-flag" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
                     Current Patients
                 </a>
             </li>
             <li {!! (Request::is('admin/users/create') ? 'class="active" id="active"' : '') !!}>
-                <a href="{{ URL::to('admin/users/create') }}">
+                <a href="{{ URL::to('admin/patients/create') }}">
                     <i class="livicon" data-name="users-add" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
                     Add New Patient
                 </a>
             </li>
         
             <li {!! (Request::is('admin/deleted_users') ? 'class="active" id="active"' : '') !!}>
-                <a href="{{ URL::to('admin/deleted_users') }}">
+                <a href="{{ URL::to('admin/patients/deleted_patients') }}">
                     <i class="livicon" data-name="users-ban" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
                     Archived patients
                 </a>
             </li>
         </ul>
     </li>
+
+    
     
      <li {!! (Request::is('admin/index1') ? 'class="active"' : '') !!}>
         <a href="{{  URL::to('admin/index1') }}">
