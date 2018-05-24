@@ -108,7 +108,7 @@
                         <li class="user-footer">
                             <div class="pull-left">
                                 <a href="{{ URL::route('lockscreen',Sentinel::getUser()->id) }}">
-                                    <i class="livicon" data-name="lock" data-size="16" data-c="#555555" data-hc="#555555" data-loop="true"></i>
+                                    <i class="livicon" data-name="sign-out" data-size="16" data-c="#555555" data-hc="#555555" data-loop="true"></i>
                                     Lock
                                 </a>
                             </div>
@@ -158,7 +158,8 @@
 <!-- global js -->
 
 <script src="{{ asset('assets/js/app.js') }}" type="text/javascript"></script>
-
+        <script type="text/javascript" src="{{ asset('assets/vendors/select2/js/select2.js') }}"></script>
+        <link href="{{ asset('assets/vendors/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css">
 
 
 

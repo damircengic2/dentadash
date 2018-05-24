@@ -87,10 +87,10 @@
                         </a>
                     </div
 
-                    <div class="text-center p-t-136">
+                    <div class="text-center">
                         <a class="txt2" href="#">
                             Register your Account ->
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                            
                         </a>
                     </div>
                 </form>

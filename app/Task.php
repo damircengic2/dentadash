@@ -37,4 +37,10 @@ class Task extends Model
             return date('Y-m-d', strtotime($task_deadline));
         }
     }
+
+    public static function getTasks(){
+        $tasks = Task::all();
+        dd ($tasks);
+    }
+
 }

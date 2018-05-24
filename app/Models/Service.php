@@ -41,4 +41,9 @@ class Service extends Model
         'name' => 'required',
         'unitPrice' => 'required'
     ];
+
+    public function invoiceLines ()
+    {
+        return $this->hasMany('App\InvoiceLine');
+    }
 }

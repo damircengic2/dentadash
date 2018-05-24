@@ -14,6 +14,8 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
+use DB;
+
 class DentalChartController extends InfyOmBaseController
 {
     /** @var  DentalChartRepository */
@@ -35,8 +37,12 @@ class DentalChartController extends InfyOmBaseController
 
         $this->dentalChartRepository->pushCriteria(new RequestCriteria($request));
         $dentalCharts = $this->dentalChartRepository->all();
+
+	$patients = DB::table("patients")->get();
+
         return view('admin.dentalCharts.index')
-            ->with('dentalCharts', $dentalCharts);
+            ->with('dentalCharts', $dentalCharts)
+            ->with('patients', $patients);
     }
 
     /**

@@ -13,6 +13,10 @@
     <meta name="_token" content="{{ csrf_token() }}">
    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/datetimepicker/css/bootstrap-datetimepicker.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/bootstrap-datetime-picker/css/bootstrap-datetimepicker.min.css') }}">
+
+      <link href="{{ asset('assets/vendors/summernote/css/summernote-bs4.css') }}" rel="stylesheet" type="text/css">
+    {{--<link href="{{ asset('assets/vendors/summernote/css/summernote.css') }}" rel="stylesheet" type="text/css">--}}
+
     <!-- end of page level css -->
     <style>
         .datetimepicker-dropdown-bottom-left:before{
@@ -72,10 +76,16 @@
                                 </div>
                             </div>
                         <div class="add_list adds">
+                        
                             {!! Form::open(['class'=>'form', 'id'=>'main_input_box']) !!}
                             <div class="form-group">
+
+                                
+                       
+                     
                                 {!! Form::label('task_description', 'Task description: ') !!}
-                                {!! Form::text('task_description', null, ['class' => 'form-control','id'=>'task_description', 'required' => 'required']) !!}
+                                {!! Form::textarea('task_description', null, ['class' => 'summer form-group','id'=>'task_description', 'required' => 'required']) !!}
+                                
                             </div>
                             <div class="form-group">
                                 {!! Form::label('task_deadline', 'Deadline: ') !!}
@@ -113,10 +123,19 @@
 
 {{-- page level scripts --}}
 @section('footer_scripts')
+{{--    <script src="{{ asset('assets/vendors/summernote/js/summernote.min.js') }}" type="text/javascript"></script>--}}
+
+    <script src="{{ asset('assets/vendors/summernote/js/summernote-bs4.min.js') }}" type="text/javascript"></script>
+ <script src="{{asset('assets/vendors/ckeditor/js/ckeditor.js')}}" type="text/javascript"></script>
     <script type="text/javascript" src="{{ asset('assets/vendors/moment/js/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/vendors/bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/tasklist.js') }}"></script>
-
+<script src="{{ asset('assets/js/pages/editor2.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+  $('.summer').summernote();
+});
+</script>
     <script>
         var currentDate = new Date();
         $(".datepicker").datetimepicker({

@@ -23,9 +23,12 @@ class CreatePatientsTable extends Migration
             $table->string('Address')->nullable();
             $table->string('PostalCode')->nullable();
             $table->string('City')->nullable();
+            $table->string('Email')->nullable();
             $table->string('JMBG')->nullable();
+            $table->string('PhoneNumber')->nullable();
             $table->string('Picture')->nullable();
             $table->string('DentalRecord')->nullable();
+            $table->string('svg')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

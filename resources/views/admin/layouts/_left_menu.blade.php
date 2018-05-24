@@ -64,7 +64,7 @@
     </li>
   
 
-    <li {!! (Request::is('admin/users') || Request::is('admin/users/create') || Request::is('admin/user_profile') || Request::is('admin/users/*') || Request::is('admin/deleted_users') ? 'class="active"' : '') !!}>
+    <li {!! (Request::is('admin/invoices') || Request::is('admin/invoices/*') || Request::is('admin/invoice_lines/*') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="printer" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
                data-loop="true"></i>
@@ -72,16 +72,16 @@
             <span class="fa arrow"></span>
         </a>
         <ul class="sub-menu">
-            <li {!! (Request::is('admin/users') ? 'class="active" id="active"' : '') !!}>
-                <a href="{{ URL::to('admin/users') }}">
+            <li {!! (Request::is('admin/invoices/create') ? 'class="active" id="active"' : '') !!}>
+                <a href="{{ URL::to('admin/invoices/create') }}">
                     <i class="livicon" data-name="plus-alt" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
                     Create new
                 </a>
             </li>
-            <li {!! (Request::is('admin/invoice_history') ? 'class="active" id="active"' : '') !!}>
-                <a href="{{ URL::to('admin/invoice_history') }}">
+            <li {!! (Request::is('admin/invoices') ? 'class="active" id="active"' : '') !!}>
+                <a href="{{ URL::to('admin/invoices') }}">
                     <i class="livicon" data-name="folder-open" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"></i>
-                    History
+                    List
                 </a>
             </li>
         

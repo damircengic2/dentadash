@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Sarajevo',
 
     /*
     |--------------------------------------------------------------------------
@@ -179,6 +179,7 @@ return [
         \InfyOm\CoreTemplates\CoreTemplatesServiceProvider::class,
         \InfyOm\GeneratorBuilder\GeneratorBuilderServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
@@ -239,6 +240,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        'CurrentDate' => Providers\CurrentDateServiceProvider::class,
         'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
     ],
 

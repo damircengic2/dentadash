@@ -31,182 +31,127 @@
             <li>
                 <a href="#">Users</a>
             </li>
-            <li class="active">User Profile</li>
+            <li class="active">User profile</li>
         </ol>
     </section>
     <!--section ends-->
     <section class="content user_profile">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="nav  nav-tabs first_svg">
-                    <li class="nav-item">
-                        <a href="#tab1" data-toggle="tab" class="nav-link active">
-                            <i class="livicon" data-name="user" data-size="16" data-c="#777"  data-hc="#000" data-loop="true"></i>
-                            User Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#tab2" data-toggle="tab" class="nav-link">
-                            <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
-                            Change Password</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ URL::to('admin/user_profile') }}" class=" nav-link" >
-                            <i class="livicon" data-name="gift" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
-                            Advanced User Profile</a>
-                    </li>
-
-                </ul>
-                <div  class="tab-content mar-top" id="clothing-nav-content">
-                    <div id="tab1" class="tab-pane fade show active">
+         
+                
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
-                                    <div class="card-heading">
-                                        <h3 class="card-title">
+                                    
+                                    
+                                      <section class="content user_profile">
 
-                                            User Profile
-                                        </h3>
+                              <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail" style="margin-top: 5%;">
 
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="img-file">
-                                                @if($user->pic)
-                                                    <img src="{{ $user->pic }}" alt="img"
-                                                         class="img-fluid"/>
-                                                @elseif($user->gender === "male")
-                                                    <img src="{{ asset('assets/images/authors/avatar3.png') }}" alt="..."
-                                                         class="img-fluid"/>
-                                                @elseif($user->gender === "female")
-                                                    <img src="{{ asset('assets/images/authors/avatar5.png') }}" alt="..."
-                                                         class="img-fluid"/>
-                                                @else
-                                                    <img src="{{ asset('assets/images/authors/no_avatar.jpg') }}" alt="..."
-                                                         class="img-fluid"/>
-                                                @endif
+                        @if(Sentinel::getUser()->pic)
+                            <img src="{{ Sentinel::getUser()->pic }}" alt="img" height="35px" width="35px"
+                                 class="img-fluid float-left"/>
+
+                        @elseif(Sentinel::getUser()->gender === "male")
+                            <img src="{{ asset('assets/images/authors/avatar3.png') }}" alt="img" height="35px" width="35px"
+                                 class="img-fluid float-left"/>
+
+                        @elseif(Sentinel::getUser()->gender === "female")
+                            <img src="{{ asset('assets/images/authors/avatar5.png') }}" alt="img" height="35px" width="35px"
+                                 class="img-fluid float-left"/>
+
+                        @else
+                            <img src="{{ asset('assets/images/authors/no_avatar.jpg') }}" alt="img" height="35px" width="35px"
+                                 class="img-fluid float-left"/>
+                        @endif
+                                               
                                             </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail" ></div>
+                                            <div>
+
+                                                <div style="margin-bottom: 5%;">
+                                                <h3 class="card-title">
+
+                                            {{$user->first_name}} {{$user->last_name}}
+                                        </h3>
                                         </div>
-                                        <div class="col-md-8">
-                                                <div class="table-responsive-lg table-responsive-sm table-responsive-md table-responsive">
-                                                    <table class="table table-bordered table-striped" id="users">
-
-                                                        <tr>
-                                                            <td>@lang('users/title.first_name')</td>
-                                                            <td>
-                                                                <p class="user_name_max">{{ $user->first_name }}</p>
-                                                            </td>
-
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.last_name')</td>
-                                                            <td>
-                                                                <p class="user_name_max">{{ $user->last_name }}</p>
-                                                            </td>
-
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.email')</td>
-                                                            <td>
-                                                                {{ $user->email }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                @lang('users/title.gender')
-                                                            </td>
-                                                            <td>
-                                                                {{ $user->gender }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.dob')</td>
-
-                                                            @if($user->dob=='0000-00-00')
-                                                                <td>
-                                                                </td>
-                                                            @else
-                                                                <td>
-                                                                    {{ $user->dob }}
-                                                                </td>
-                                                            @endif
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.country')</td>
-                                                            <td>
-                                                                {{ $user->country }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.state')</td>
-                                                            <td>
-                                                                {{ $user->state }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.city')</td>
-                                                            <td>
-                                                                {{ $user->city }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.address')</td>
-                                                            <td>
-                                                                {{ $user->address }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.postal')</td>
-                                                            <td>
-                                                                {{ $user->postal }}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.status')</td>
-                                                            <td>
-
-                                                                @if($user->deleted_at)
-                                                                    Deleted
-                                                                @elseif($activation = Activation::completed($user))
-                                                                    Activated
-                                                                @else
-                                                                    Pending
-                                                                @endif
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>@lang('users/title.created_at')</td>
-                                                            <td>
-                                                                {!! $user->created_at->diffForHumans() !!}
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileinput-new">
+                                                        Select image
+                                                    </span>
+                                                    <span class="fileinput-exists">Change</span>
+                                                    <input type="file" name="..."></span>
+                                                <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="table-responsive-lg table-responsive-md table-responsive-sm">
+                                    <table class="table  table-striped" id="users">
+
+                                        <tr>
+                                            <td>Username</td>
+                                            <td>{{$user->email}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone</td>
+                                            <td>
+                                                {$user->phone}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                               Address
+                                            </td>
+                                            <td>
+                                            {{$user->address}}, {{$user->postal}} {{$user->city}}, 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Country</td>
+                                            <td>
+                                                {{$user->country}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Joined</td>
+                                            <td>
+                                                {{$user->created_at->diffForHumans()}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Created At</td>
+                                            <td>
+                                                1 month ago
+                                            </td>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
                             </div>
-                        </div>
-                        </div>
-                    <div id="tab2" class="tab-pane fade">
-                        <div class="row">
-                            <div class="col-md-12 pd-top ml-auto">
+
+                                 <div class="col-md-6 pd-top ml-auto">
                                 <form class="form-horizontal">
+                                    <p>You can change your password here.</p>
                                     <div class="form-body">
                                         <div class="form-group">
                                             <div class="row">
                                             {{ csrf_field() }}
-                                            <label for="inputpassword" class="col-md-3 control-label">
-                                                Password
-                                                <span class='require'>*</span>
-                                            </label>
+                                            
+                                            
+                                          
                                             <div class="col-md-9">
                                                 <div class="input-group">
                                                             <span class="input-group-append">
                                                                 <span class="input-group-text"><i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i></span>
                                                             </span>
-                                                    <input type="password" id="password" placeholder="Password" name="password"
+                                                    <input type="password" id="password" placeholder="New password" name="password"
                                                            class="form-control"/>
                                                 </div>
                                             </div>
@@ -214,16 +159,13 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
-                                            <label for="inputnumber" class="col-md-3 control-label">
-                                                Confirm Password
-                                                <span class='require'>*</span>
-                                            </label>
+                                           
                                             <div class="col-md-9">
                                                 <div class="input-group">
                                                             <span class="input-group-append">
                                                                 <span class="input-group-text"><i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i></span>
                                                             </span>
-                                                    <input type="password" id="password-confirm" placeholder="Confirm Password" name="confirm_password"
+                                                    <input type="password" id="password-confirm" placeholder="Confirm new password" name="confirm_password"
                                                            class="form-control"/>
                                                 </div>
                                             </div>
@@ -240,7 +182,10 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                        </div>
+                    <div id="tab2" class="tab-pane fade">
+                        <div class="row">
+                    
                 </div>
             </div>
         </div>

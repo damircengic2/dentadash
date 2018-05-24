@@ -65,4 +65,9 @@ class Patient extends Model
         'DoB' => 'required|date'
     ];
 
+    public function invoice ()
+    {
+        return $this->hasMany('App\Invoice');
+    }
+
 }

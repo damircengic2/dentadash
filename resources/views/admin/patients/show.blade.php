@@ -56,13 +56,20 @@ Patient
                         Dental chart
                     </h4>
                 </div>
-<!-- // include appointments section --> 
-<p>Lorem ipsum </p>
-<p>Lorem ipsum </p>
-<p>Lorem ipsum </p>
-<p>Lorem ipsum </p>
-<p>Lorem ipsum </p>
+ 
+   <div class="form-group container" style="padding-top: 2%;"> 
+    <img src="{{ asset('assets/img/d_overhead_top.svg') }}"/>
+    {!!$patient->svg!!} 
+    <img src="{{ asset('assets/img/d_overhead_bottom.svg') }}"/>
+</div>
+<div class="form-group col-md-6 offset-md-3" style="text-align: center; padding: 1%; border-radius: 10px; background: #E7E1E8; ">
 
+    <!-- Legend of procedures -->
+    <span><i class="fa fa-circle" style="color: grey;"></i> Cavity</span>
+    <span><i class="fa fa-circle" style="color: green;"></i> Composite</span>
+    <span><i class="fa fa-circle" style="color: yellow;"></i> Crown</span>
+    <span><i class="fa fa-circle" style="color: blue;"></i> Implant</span>
+    <span><i class="fa fa-circle" style="color: black;"></i> Extraction</span>
     </div>
 
       <div class="card panel-warning"> 
@@ -72,11 +79,7 @@ Patient
                     </h4>
                 </div>
 <!-- // include appointments section --> 
-<p>Lorem ipsum </p>
-<p>Lorem ipsum </p>
-<p>Lorem ipsum </p>
-<p>Lorem ipsum </p>
-<p>Lorem ipsum </p>
+
 
     </div>
 

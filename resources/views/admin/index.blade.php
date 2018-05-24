@@ -26,7 +26,7 @@ Josh Admin Template
 {{-- Page content --}}
 @section('content')
 <section class="content-header">
-    <h1>Welcome to Dashboard   <span class="d-none d-md-inline-block header_info">( Dynamic Dashboard )</span></h1>
+    <h1>Welcome, <a href="{{ URL::route('admin.users.show',Sentinel::getUser()->id) }}">{{ Sentinel::getUser()->first_name }}</a>!</h1>
     <ol class="breadcrumb">
         <li class=" breadcrumb-item active">
             <a href="#">
@@ -39,109 +39,21 @@ Josh Admin Template
 
 <!--</section>-->
 <section class="content">
-    @if ($analytics_error != 0)
+    <!--@if ($analytics_error != 0)
     <div class="alert alert-danger alert-dismissable margin5">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>Error:</strong> You Need to add Google Analytics file for full working of the page
     </div>
-    @endif
+    @endif-->
     <div class="row">
-        <div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 margin_10 animated fadeInLeftBig">
-            <!-- Trans label pie charts strats here-->
-            <div class="widget-1">
-                <div class="card-body squarebox square_boxs">
-                    <div class="col-12 float-left nopadmar">
-                        <div class="row">
-                            <div class="square_box col-6 text-right">
-                                <span>Visitors</span>
-
-                                <div class="number" id="myTargetElement3"></div>
-                            </div>
-                            <div class="col-6">
-                            <span class="widget_circle3 float-right">
-                            <i class="livicon livicon-evo-holder " data-name="eye-open" data-l="true" data-c="#01BC8C"
-                                 data-hc="#01BC8C" data-s="40"></i>
-                                </span>
-
-                        </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        
+        <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 margin_10 animated fadeInRightBig form-group">
+            <a class="weatherwidget-io" disabled href="https://forecast7.com/en/43d8618d41/sarajevo/" data-label_1="SARAJEVO" data-label_2="WEATHER" data-icons="Climacons Animated" data-days="5" data-theme="original" >SARAJEVO WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
         </div>
-        <div class="col-lg-6 col-xl-3  col-md-6 col-sm-6 margin_10 animated fadeInLeftBig">
-            <!-- Trans label pie charts strats here-->
-            <div class="widget-1">
-                <div class="card-body squarebox square_boxs">
-                    <div class="col-12 float-left nopadmar">
-                        <div class="row">
-                            <div class="square_box col-6 text-right">
-                                <span>Users</span>
-
-                                <div class="number" id="myTargetElement4"></div>
-                            </div>
-                            <div class="col-6">
-                            <span class="widget_circle4 float-right">
-                            <i class="livicon livicon-evo-holder " data-name="user" data-l="true" data-c="#F89A14"
-                                data-hc="#F89A14" data-s="40"></i>
-                                </span>
-
-                        </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 margin_10 animated fadeInRightBig">
-            <!-- Trans label pie charts strats here-->
-            <div class="widget-1">
-                <div class="card-body squarebox square_boxs">
-                    <div class="col-12 float-left nopadmar">
-                        <div class="row">
-                            <div class="square_box col-6 text-right">
-                                <span>Page Views</span>
-
-                                <div class="number" id="myTargetElement1"></div>
-                            </div>
-                            <div class="col-6">
-                            <span class="widget_circle1 float-right">
-                         <i class="livicon livicon-evo-holder " data-name="flag" data-l="true" data-c="#e9573f"
-                            data-hc="#e9573f" data-s="40"></i>
-                                </span>
-
-                        </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 margin_10 animated fadeInRightBig">
-            <!-- Trans label pie charts strats here-->
-            <div class="widget-1">
-                <div class="card-body squarebox square_boxs">
-                    <div class="col-12 float-left nopadmar">
-                        <div class="row">
-                            <div class="square_box col-6 text-right">
-                                <span>Articles</span>
-
-                                <div class="number" id="myTargetElement2"></div>
-                            </div>
-                            <div class="col-6">
-                            <span class="widget_circle2 float-right">
- <i class="livicon livicon-evo-holder " data-name="pen" data-l="true" data-c="#418BCA"
-    data-hc="#418BCA" data-s="40"></i>
-                                </span>
-
-                        </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
     </div>
     <!--/row-->
@@ -214,32 +126,9 @@ Josh Admin Template
         <div class="col-lg-4 col-md-12 col-sm-12 col-12 my-lg-0 my-3 my-md-3 my-sm-0">
             <div class="card panel-border">
                 <div class="card-heading border-light">
-                    <h3 class="card-title">
-                        <i class="livicon" data-name="users" data-size="18" data-color="#00bc8c" data-hc="#00bc8c"
-                           data-l="true"></i>
-                        Recent Users
-                    </h3>
-                </div>
+                   
                 <div class="card-body nopadmar users">
-                    @foreach($users as $user )
-                    <div class="media">
-                        <div>
-                            @if($user->pic)
-                            <img src="{{ $user->pic }}"
-                                 class="media-object rounded-circle">
-                            @else
-                            <img src="{{ asset('assets/images/authors/no_avatar.jpg') }}"
-                                 class="media-object rounded-circle">
-                            @endif
-                        </div>
-                        <div class="media-body ml-3">
-                            <h5 class="media-heading">{{ $user->full_name }}</h5>
-                            <p>{{ $user->email }}  <span
-                                    class="user_create_date float-right">{{ $user->created_at->format('d M') }} </span>
-                            </p>
-                        </div>
-                    </div>
-                    @endforeach
+                    <a class="twitter-timeline" data-lang="en" data-height="550" data-theme="light" data-link-color="#19CF86" href="https://twitter.com/AmerDentalAssn?ref_src=twsrc%5Etfw">Tweets by AmerDentalAssn</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
                 </div>
             </div>
@@ -319,7 +208,7 @@ Josh Admin Template
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyADWjiTRjsycXf3Lo0ahdc7dDxcQb475qw&libraries=places"></script>
 <script src="{{ asset('assets/vendors/morrisjs/morris.min.js') }}"></script>
 
-<script>
+<script type=""> 
     var useOnComplete = false,
             useEasing = false,
             useGrouping = false,

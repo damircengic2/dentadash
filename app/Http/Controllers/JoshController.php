@@ -47,7 +47,7 @@ class JoshController extends Controller {
         "BM" => "Bermuda",
         "BT" => "Bhutan",
         "BO" => "Bolivia",
-        "BA" => "Bosnia and Herzegowina",
+        "BA" => "Bosnia and Herzegovina",
         "BW" => "Botswana",
         "BV" => "Bouvet Island",
         "BR" => "Brazil",

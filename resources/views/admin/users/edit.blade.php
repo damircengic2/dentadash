@@ -23,7 +23,7 @@
 {{-- Page content --}}
 @section('content')
     <section class="content-header">
-        <h1>Edit user</h1>
+        <h1>Edit profile</h1>
         <ol class="breadcrumb">
             <li>
                 <a href="{{ route('admin.dashboard') }}">
@@ -37,12 +37,12 @@
     </section>
     <section class="content">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-lg-12 my-3">
+            <div class="col-md-6 col-sm-6 col-lg-6 my-3">
                 <div class="card panel-primary">
                     <div class="card-heading">
                         <h3 class="card-title">
-                            <i class="livicon" data-name="user-add" data-size="18" data-c="#fff" data-hc="#fff" data-loop="true"></i>
-                            Editing user : <p class="user_name_max">{!! $user->first_name!!} {!! $user->last_name!!}</p>
+                            
+                            Editing user: <p class="user_name_max">{!! $user->first_name!!} {!! $user->last_name!!}</p>
                         </h3>
                         <span class="float-right clickable">
                                     <i class="fa fa-chevron-up"></i>

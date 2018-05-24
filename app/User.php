@@ -47,4 +47,9 @@ class User extends EloquentUser
         return $this->belongsTo( Country::class );
     }
 
+    public function invoices()
+    {
+        return $this->hasMany('App\Invoice');
+    }
+
 }

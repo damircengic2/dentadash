@@ -22,6 +22,7 @@ class DentalChart extends Model
         'Medication',
         'Allergies',
         'Notes',
+        'svg',
         'complaints'
     ];
 
@@ -35,6 +36,7 @@ class DentalChart extends Model
         'Medication' => 'string',
         'Allergies' => 'string',
         'Notes' => 'string',
+        'svg' => 'string',
         'complaints' => 'string'
     ];
 

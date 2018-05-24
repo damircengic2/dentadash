@@ -82,9 +82,9 @@ User Profile
                                     <table class="table  table-striped" id="users">
 
                                         <tr>
-                                            <td>User Name</td>
+                                            <td>Username</td>
                                             <td>
-                                                <a href="#" data-pk="1" class="editable" data-title="Edit User Name">Bella</a>
+                                                <a href="#" data-pk="1" class="editable" data-title="Edit User Name"> </a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -230,17 +230,7 @@ User Profile
                             <div class="clearfix"></div>
                             <div class="col-md-8">
                                 <ul class="nav nav-tabs ul-edit">
-                                    <li class=" nav-item">
-                                        <a href="#tab-activity" data-toggle="tab" class="nav-link active">
-                                            <i class="livicon" data-name="comments" data-size="16" data-c="#01BC8C" data-hc="#01BC8C" data-loop="true"></i> Activity
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="#tab-messages" data-toggle="tab" class="nav-link">
-                                            <i class="livicon" data-name="mail" data-size="16" data-c="#01BC8C" data-hc="#01BC8C" data-loop="true"></i> Messages
-                                        </a>
-                                    </li>
+                                 
                                     <li class="nav-item">
                                         <a href="#tab-change-pwd" data-toggle="tab" class="nav-link">
                                             <i class="livicon" data-name="key" data-size="16" data-c="#01BC8C" data-hc="#01BC8C" data-loop="true"></i> Change Password
@@ -248,235 +238,12 @@ User Profile
                                     </li>
                                 </ul>
                                 <div class="tab-content" id="clothing-nav-content">
-                                    <div id="tab-activity" class="tab-pane fade show  active">
-                                        <div class="activity">
-                                            <div class="imgs-profile media">
-                                                <a class="float-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Abbey</strong>
-                                                    started following
-                                                    <strong>Adele</strong>
-                                                    .
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        2 days ago  at 1:30pm
-                                                    </small>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object rounded-circle img-fluid mr-3" src="{{ asset('assets/img/authors/avatar1.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Clemens</strong>
-                                                    posted a new blog.
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        Today at 1:18pm
-                                                    </small>
-
-                                                    <div class="media blog-media">
-                                                        <a class="float-left" href="#">
-                                                            <img class="media-object thumbnail mr-3" src="{{ asset('assets/img/authors/avatar2.jpg') }}" alt=""></a>
-                                                        <div class="media-body col-md-8 col-lg-8 col-sm-8 col-12">
-                                                            <h4 class="media-title">
-                                                                <a href="">
-                                                                    Lorem ipsum dolor
-                                                                </a>
-                                                            </h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                                <a href="">Read more</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- media --> </div>
-                                                <!-- media-body --> </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar3.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Lottie</strong>
-                                                    started following
-                                                    <strong>Winifred</strong>
-                                                    .
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        6 days ago at 8:30am
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="float-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar4.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Marlee</strong>
-                                                    uploaded
-                                                    <a href="">3 photos</a>
-                                                    .
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        3 days ago at 12:30pm
-                                                    </small>
-
-                                                    <ul class="uploadphoto-list">
-                                                        <li>
-                                                            <a href="{{ asset('assets/img/authors/avatar2.jpg') }}" data-rel="prettyPhoto">
-                                                                <img src="{{ asset('assets/img/authors/avatar2.jpg') }}" class="thumbnail img-fluid" alt=""></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ asset('assets/img/authors/avatar3.jpg') }}" data-rel="prettyPhoto">
-                                                                <img src="{{ asset('assets/img/authors/avatar3.jpg') }}" class="thumbnail img-fluid" alt=""></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ asset('assets/img/authors/avatar.jpg') }}" data-rel="prettyPhoto">
-                                                                <img src="{{ asset('assets/img/authors/avatar.jpg') }}" class="thumbnail img-fluid" alt=""></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar7.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Joseph</strong>
-                                                    started following
-                                                    <strong>Keegan</strong>
-                                                    .
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        6 days ago at 8:15am
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar2.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Lenny</strong>
-                                                    posted a new note.
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        4 days ago at 11:00 am
-                                                    </small>
-                                                    <h4 class="media-title">
-                                                        <a href="">
-                                                            Consectetur Adipisicing Elit
-                                                        </a>
-                                                    </h4>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
-                                                        <a href="">Read more</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar3.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Danielle</strong>
-                                                    posted a new Image.
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        sep 2 at 1:08pm
-                                                    </small>
-
-                                                    <div class="media blog-media">
-                                                        <a class="pull-left" href="#">
-                                                            <img class="media-object thumbnail mr-3" src="{{ asset('assets/img/authors/avatar4.jpg') }}" alt=""></a>
-                                                        <div class="media-body col-md-8 col-lg-8 col-sm-8 col-xs-12">
-                                                            <h4 class="media-title">
-                                                                <a href="">
-                                                                    Ut Enim Ad Minim Veniam
-                                                                </a>
-                                                            </h4>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
-                                                                <a href="">Read more</a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- media --> </div>
-                                            </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Frida</strong>
-                                                    added new photo.
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        December 2 at 12:30pm
-                                                    </small>
-                                                    <div class="mb20"></div>
-                                                    <a href="{{ asset('assets/img/authors/avatar.jpg') }}" data-rel="prettyPhoto" class="img-single">
-                                                        <img src="{{ asset('assets/img/authors/avatar.jpg') }}" class="thumbnail img-fluid" alt=""></a>
-                                                </div>
-                                            </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar2.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Jensen</strong>
-                                                    started following
-                                                    <strong>Gordon</strong>
-                                                    .
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        Jan 15 at 3:30pm
-                                                    </small>
-                                                </div>
-                                            </div>
-                                            <!-- media -->
-
-                                            <div class="imgs-profile media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object rounded-circle mr-3" src="{{ asset('assets/img/authors/avatar3.jpg') }}" alt=""></a>
-                                                <div class="media-body">
-                                                    <strong>Krista</strong>
-                                                    posted a new blog.
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        Feb 15 at 3:18pm
-                                                    </small>
-
-                                                    <div class="media blog-media">
-                                                        <a class="pull-left" href="#">
-                                                            <img class="media-object thumbnail mr-3" src="{{ asset('assets/img/authors/avatar4.jpg') }}" alt=""></a>
-                                                        <div class="media-body col-md-8 col-lg-8 col-sm-8 col-xs-12">
-                                                            <h4 class="media-title">
-                                                                <a href="">
-                                                                    Ut Enim Ad Minim Veniam
-                                                                </a>
-                                                            </h4>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
-                                                                <a href="">Read more</a>
-                                                            </p>
-                                                        </div>
+                                    
                                                     </div>
                                                     <!-- media --> </div>
                                             </div>
                                             <!-- media --> </div>
-                                    </div>
+                                   
                                     <div id="tab-change-pwd" class="tab-pane fade">
                                         <div class="row">
                                             <div class="col-md-12 pd-top">

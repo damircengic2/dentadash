@@ -172,7 +172,7 @@ class FrontEndController extends JoshController
      *
      * @return Redirect
      */
-    public function postRegister(UserRequest $request)
+    public function postRegister(Request $request)
     {
 
         $activate = $this->user_activation; //make it false if you don't want to activate user automatically it is declared above as global variable

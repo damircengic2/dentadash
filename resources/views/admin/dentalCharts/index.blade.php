@@ -8,13 +8,25 @@ DentalCharts
 @section('header_styles')
         <script src="{{ asset('assets/js/snap.svg.js') }}"/></script>
         <script src="{{ asset('assets/js/chart.js') }}"></script>
-        <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
-
-        
+	<script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>        
 @stop
+
+
 
 {{-- Page content --}}
 @section('content')
+
+<script type="text/javascript">
+	//DATABASE_GET = "{ route('patientchart.getdata') }}";
+	//DATABASE_POST = "{ route('patientchart.postdata') }}";
+
+	DATABASE_GET = "/admin/patientchart/getdata"
+	DATABASE_POST = "/admin/patientchart/postdata"
+
+	$(document).ready(function () {
+		$(".select2").select2()
+	})
+</script>
 
 <style type="text/css">
 #chart {
@@ -67,19 +79,22 @@ select, button {
 
                  <h1>Dental Charting Demo</h1>
 
-        <input type="text" id="patient_name" placeholder="insert patient name here">
+	<select class="select2" id="patient_name">
+		@foreach ($patients as $patient) 
+			<option>{{ $patient->Fname }}</option>
+		@endforeach
+	</select>
+
         <br />
         <button id="button_load">Load graph</button>
         <br />
 
         <!-- FIXME: viewbox needs to be there when the element is created -->
         <svg id="chart" preserveAspectRatio="xMidYMid meet" viewbox="0 0 5820 740"></svg>
-        Selected patient: <label id="selected_patient">none</label>
-        <br />
         <button id="button_save">Save graph</button>
 
         <section class='treatment-form'>
-            <select id="selected-treatment">
+            <select class="select2" id="selected-treatment">
                 <option value="amalgam" colordata="red">Amalgam</option>
                 <option value="composite" colordata="green">Composite</option>
                 <option value="extract" colordata="blue">Extract</option>
